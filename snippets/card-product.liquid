@@ -205,6 +205,15 @@
             {%- endif -%}
 
             {% render 'price', product: card_product, price_class: '', show_compare_at_price: true %}
+            {% if card_product.variants.size > 1 %}
+              <div class="product-variants mt-2 flex flex-wrap gap-2">
+                {% for variant in card_product.variants %}
+                  <div class="rounded-[1rem] border border-black w-fit p-[5px]">
+                    {{ variant.title }}
+                  </div>
+                {% endfor %}
+              </div>
+            {% endif %}            
             {%- if card_product.quantity_price_breaks_configured? -%}
               {% if card_product.variants_count == 1 and quick_add == 'bulk' %}
                 {% liquid
