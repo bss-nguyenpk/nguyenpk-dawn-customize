@@ -1,41 +1,41 @@
-<section class="collection-announcement page-width">
-    {% if section.settings.title != blank %}
-      <h2>{{ section.settings.title }}</h2>
-    {% endif %}
-  
-    <p>The new {{ collection.title }} is out now!</p>
-  
-    {% if section.settings.info_text != blank %}
-      <div class="rte">
-        {{ section.settings.info_text }}
-      </div>
-    {% endif %}
-  </section>
-  
-  {% schema %}
-  {
-    "name": "Collection announcement",
-    "tag": "section",
-    "class": "section",
-    "settings": [
-      {
-        "type": "text",
-        "id": "title",
-        "label": "Section title",
-        "default": "New collection drop!"
-      },
-      {
-        "type": "textarea",
-        "id": "info_text",
-        "label": "Additional information",
-        "default": "You can add more details about this collection here."
-      }
-    ],
-    "presets": [
-      {
-        "name": "Collection announcement"
-      }
-    ]
-  }
-  {% endschema %}
+<section class="page-width mt-[40px]">
+	{% if section.settings.title != blank %}
+			<h2 class="font-bold">{{ section.settings.title }}</h2>
+	{% endif %}
+
+	<p>The new <span class="font-bold">{{ collection.title }}</span> is out now!</p>
+
+	{% if section.settings.info_text != blank %}
+			<div class="italic">
+			{{ section.settings.info_text }}
+			</div>
+	{% endif %}
+</section>
+
+{% schema %}
+{
+"name": "Collection announcement",
+"tag": "section",
+"class": "section",
+"settings": [
+    {
+    "type": "text",
+    "id": "title",
+    "label": "Section title",
+    "default": "New collection drop!"
+    },
+    {
+    "type": "textarea",
+    "id": "info_text",
+    "label": "Additional information",
+    "default": "You can add more details about this collection here."
+    }
+],
+"presets": [
+    {
+    "name": "Collection announcement"
+    }
+]
+}
+{% endschema %}
   
